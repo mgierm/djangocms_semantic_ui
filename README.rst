@@ -34,5 +34,5 @@ Settings
 
     INSTALLED_APPS = (
         # ...
-        'djangocms-semantic-ui',
+        'djangocms_semantic_ui',
     )

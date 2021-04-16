@@ -137,6 +137,7 @@ class Segment(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
@@ -184,6 +185,7 @@ class GroupSegment(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
@@ -234,6 +236,7 @@ class Container(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
@@ -301,6 +304,7 @@ class Grid(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
@@ -356,6 +360,7 @@ class Column(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
@@ -402,6 +407,7 @@ class TabContainer(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
@@ -449,6 +455,7 @@ class Tab(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE(),
     )
 
     def __str__(self):
