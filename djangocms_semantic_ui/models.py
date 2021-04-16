@@ -1,6 +1,5 @@
 from django.db import models
 from cms.models import CMSPlugin
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -97,7 +96,7 @@ TAB_TYPE = (
 )
 
 
-@python_2_unicode_compatible
+
 class Segment(CMSPlugin):
     """
     Segment
@@ -137,7 +136,7 @@ class Segment(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
@@ -166,7 +165,7 @@ class Segment(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
+
 class GroupSegment(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -185,7 +184,7 @@ class GroupSegment(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
@@ -202,7 +201,7 @@ class GroupSegment(CMSPlugin):
         return ' '.join(display)
 
 
-@python_2_unicode_compatible
+
 class Container(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -236,7 +235,7 @@ class Container(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
@@ -265,7 +264,7 @@ class Container(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
+
 class Grid(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -304,7 +303,7 @@ class Grid(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
@@ -335,7 +334,7 @@ class Grid(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
+
 class Column(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -360,7 +359,7 @@ class Column(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
@@ -387,7 +386,7 @@ class Column(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
+
 class TabContainer(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -407,7 +406,7 @@ class TabContainer(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
@@ -430,7 +429,7 @@ class TabContainer(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
+
 class Tab(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -455,7 +454,7 @@ class Tab(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
-        on_delete=models.CASCADE(),
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
