@@ -2,7 +2,7 @@
 
 <div class="{{ instance.get_classes }} card">
     <div class="image">
-        <img src="{% thumbnail instance.photo 320x320 %}">
+        <img src="{% thumbnail instance.photo 320x320 crop %}">
     </div>
     <div class="content">
         <div class="header">{{ instance.header }}</div>
@@ -10,12 +10,12 @@
             {{ instance.company_position }}
         </div>
         <div class="description">
-            {{ instance.description }}
+            {% if instance.description %}{{ instance.description }}{% endif %}
         </div>
     </div>
     <div class="extra content">
         <span class="right floated">
-            {{ instance.right_bottom_content }}
+            {% if instance.right_bottom_content %}{{ instance.right_bottom_content }}{% endif %}
         </span>
         <span>
             <a href="mailto:{{ instance.email }}"><i class="envelope outline icon"></i> {{ instance.email }}</a>
