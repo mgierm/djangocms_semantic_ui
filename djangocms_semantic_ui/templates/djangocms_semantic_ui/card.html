@@ -1,6 +1,8 @@
+{% load static %}
+
 <div class="{{ instance.get_classes }} card">
     <div class="image">
-        <img src="{{ instance.photo }}">
+        <img src="{% static instance.photo.url %}">
     </div>
     <div class="content">
         <div class="header">{{ instance.header }}</div>
