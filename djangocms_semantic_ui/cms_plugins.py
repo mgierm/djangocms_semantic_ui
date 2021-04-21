@@ -3,8 +3,9 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 
-from .models import Segment, GroupSegment, Container, Column, Grid, TabContainer, Tab
-from .forms import GroupSegmentForm, SegmentForm, ContainerForm, GridForm, ColumnForm, TabContainerForm, TabForm
+from .models import Segment, GroupSegment, Container, Column, Grid, TabContainer, Tab, CardContainer, Card
+from .forms import GroupSegmentForm, SegmentForm, ContainerForm, GridForm, ColumnForm, TabContainerForm, TabForm, \
+    CardContainerForm, CardForm
 
 
 class GridPlugin(CMSPluginBase):
@@ -112,6 +113,25 @@ class TabContainerPlugin(CMSPluginBase):
                 col.save()
             return response
 
+class CardContainerPlugin(CMSPluginBase):
+    model = CardContainer
+    module = _("Semantic UI")
+    name = _('Card Container')
+    render_template = "djangocms_semantic_ui/card_container.html"
+    allow_children = True
+    form = CardContainerForm
+    child_classes = ["Card"]
+
+
+class CardPlugin(CMSPluginBase):
+    model = Card
+    module = _("Semantic UI")
+    name = _('Card')
+    render_template = "djangocms_semantic_ui/card.html"
+    allow_children = True
+    form = CardForm
+
+
 plugin_pool.register_plugin(GridPlugin)
 plugin_pool.register_plugin(SemanticColumnPlugin)
 plugin_pool.register_plugin(ContainerPlugin)
@@ -120,3 +140,5 @@ plugin_pool.register_plugin(GroupSegmentPlugin)
 plugin_pool.register_plugin(TabContainerPlugin)
 plugin_pool.register_plugin(TabPlugin)
 plugin_pool.register_plugin(DividerPlugin)
+plugin_pool.register_plugin(CardContainerPlugin)
+plugin_pool.register_plugin(CardPlugin)

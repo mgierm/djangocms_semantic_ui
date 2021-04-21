@@ -95,6 +95,10 @@ TAB_TYPE = (
     ('bottom attached', 'Bottom attached'),
 )
 
+CARD_CONTAINER = (
+
+)
+
 
 
 class Segment(CMSPlugin):
@@ -476,4 +480,105 @@ class Tab(CMSPlugin):
         classes = []
         if self.tab_type:
             classes.append(self.tab_type)
+        return ' '.join(classes)
+
+
+class CardContainer(CMSPlugin):
+    label = models.CharField(
+        verbose_name=_('Label'),
+        blank=True,
+        max_length=255,
+        help_text=_('Overrides the display name in the structure mode.'),
+    )
+    cmsplugin_ptr = models.OneToOneField(
+        CMSPlugin,
+        related_name='%(app_label)s_%(class)s',
+        parent_link=True,
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return u"%s" % self.label
+
+    def get_short_description(self):
+        # display format:
+        # Style label <tag> .list.of.classes #id
+        display = []
+        if self.label:
+            display.append(self.label)
+        if self.tab_container_type:
+            display.append(self.tab_container_type)
+        return ' '.join(display)
+
+    def get_classes(self):
+        classes = []
+        if self.tab_container_type:
+            classes.append(self.tab_container_type)
+        return ' '.join(classes)
+
+
+class Card(CMSPlugin):
+    label = models.CharField(
+        verbose_name=_('Label'),
+        blank=True,
+        max_length=255,
+        help_text=_('Overrides the display name in the structure mode.'),
+    )
+    header = models.CharField(
+        verbose_name=_('Header (Name)'),
+        max_length=255,
+        help_text=_('Name of an user'),
+    )
+    position = models.CharField(
+        verbose_name=_('Position'),
+        max_length=255,
+    )
+    email = models.EmailField(
+        verbose_name=_('Email'),
+        max_length=255,
+    )
+    description = models.CharField(
+        verbose_name=_('Description'),
+        max_length=255,
+        help_text=_('Short description'),
+        blank=True,
+        null=True,
+    )
+    right_bottom_content = models.CharField(
+        verbose_name=_('Right bottom content'),
+        max_length=32,
+        help_text=_('Additional content displayed in right bottom corner of the card'),
+    )
+    color = models.CharField(
+        verbose_name=_('Color'),
+        choices=SEMANTIC_UI_COLORS,
+        max_length=20,
+        null=True,
+        blank=True,
+        help_text=_('Color Segment'),
+    )
+    cmsplugin_ptr = models.OneToOneField(
+        CMSPlugin,
+        related_name='%(app_label)s_%(class)s',
+        parent_link=True,
+        on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return u"%s" % self.label
+
+    def get_short_description(self):
+        # display format:
+        # Style label <tag> .list.of.classes #id
+        display = []
+        if self.label:
+            display.append(self.label)
+        if self.header:
+            display.append(self.header)
+        return ' '.join(display)
+
+    def get_classes(self):
+        classes = []
+        if self.color:
+            classes.append(self.color)
         return ' '.join(classes)

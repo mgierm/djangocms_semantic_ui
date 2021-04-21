@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from .models import GroupSegment, Segment, Container, Grid, Column, TabContainer, Tab
+from .models import GroupSegment, Segment, Container, Grid, Column, TabContainer, Tab, CardContainer, Card
 
 
 class TabContainerForm(forms.ModelForm):
@@ -88,4 +88,16 @@ class ColumnForm(forms.ModelForm):
 
     class Meta:
         model = Column
+        exclude = ('page', 'position', 'placeholder', 'language', 'plugin_type')
+
+
+class CardContainerForm(forms.ModelForm):
+    class Meta:
+        model = CardContainer
+        exclude = ('page', 'position', 'placeholder', 'language', 'plugin_type')
+
+
+class CardForm(forms.ModelForm):
+    class Meta:
+        model = Card
         exclude = ('page', 'position', 'placeholder', 'language', 'plugin_type')

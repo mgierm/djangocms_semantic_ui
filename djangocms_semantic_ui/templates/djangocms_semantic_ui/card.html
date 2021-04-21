@@ -1,0 +1,22 @@
+<div class="{{ instance.get_classes }} card">
+    <div class="image">
+      <img src="{{ instance.image }}">
+    </div>
+    <div class="content">
+        <div class="header">{{ instance.header }}</div>
+        <div class="meta">
+            {{ instance.position }}
+        </div>
+        <div class="description">
+            {{ instance.description }}
+        </div>
+    </div>
+    <div class="extra content">
+        <span class="right floated">
+            {{ instance.right_bottom_content }}
+        </span>
+        <span>
+            <a href="mailto:{{ insntance.email }}"><i class="enveloper open icon"></i> {{ insntance.email }}</a>
+        </span>
+    </div>
+</div>
