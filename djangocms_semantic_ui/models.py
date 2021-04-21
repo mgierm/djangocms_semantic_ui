@@ -520,6 +520,11 @@ class Card(CMSPlugin):
         max_length=255,
         help_text=_('Overrides the display name in the structure mode.'),
     )
+    photo = models.ImageField(
+        _("User photo"),
+        upload_to='user_photos',
+        null=True,
+    )
     header = models.CharField(
         verbose_name=_('Header (Name)'),
         max_length=255,
@@ -544,6 +549,8 @@ class Card(CMSPlugin):
         verbose_name=_('Right bottom content'),
         max_length=32,
         help_text=_('Additional content displayed in right bottom corner of the card'),
+        blank=True,
+        null=True,
     )
     color = models.CharField(
         verbose_name=_('Color'),

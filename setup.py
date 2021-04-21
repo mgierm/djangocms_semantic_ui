@@ -16,6 +16,7 @@ except:
 
 REQUIREMENTS = [
     'django-cms>=3.2.0',
+    'Pillow'
 ]
 
 CLASSIFIERS = [
