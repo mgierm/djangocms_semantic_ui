@@ -113,15 +113,6 @@ class TabContainerPlugin(CMSPluginBase):
                 col.save()
             return response
 
-class CardContainerPlugin(CMSPluginBase):
-    model = CardContainer
-    module = _("Semantic UI")
-    name = _('Card Container')
-    render_template = "djangocms_semantic_ui/card_container.html"
-    allow_children = True
-    form = CardContainerForm
-    child_classes = ["Card"]
-
 
 class CardPlugin(CMSPluginBase):
     model = Card
@@ -131,6 +122,15 @@ class CardPlugin(CMSPluginBase):
     allow_children = True
     form = CardForm
 
+
+class CardContainerPlugin(CMSPluginBase):
+    model = CardContainer
+    module = _("Semantic UI")
+    name = _('Card Container')
+    render_template = "djangocms_semantic_ui/card_container.html"
+    allow_children = True
+    form = CardContainerForm
+    child_classes = ["CardPlugin"]
 
 plugin_pool.register_plugin(GridPlugin)
 plugin_pool.register_plugin(SemanticColumnPlugin)
