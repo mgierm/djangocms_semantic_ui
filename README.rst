@@ -1,14 +1,10 @@
 =====================
 DjangoCMS Semantic UI
 =====================
-
-.. image:: https://badge.fury.io/py/djangocms-semantic-ui.svg
-    :target: https://badge.fury.io/py/djangocms-semantic-ui
-
-.. image:: https://travis-ci.org/CarlosMart626/djangocms_semantic_ui.svg?branch=master
-    :target: https://travis-ci.org/CarlosMart626/djangocms_semantic_ui
-
 Semantic UI reusable components for DjangoCMS.
+
+This is a fork of [DjangoCMS Semantic UI by CarlosMart626](https://github.com/CarlosMart626/djangocms_semantic_ui)
+
 
 Available Components
 ====================
@@ -20,6 +16,7 @@ Available Components
 - Group Segments
 - Dividers
 - Tabs
+- Cards
 
 Usage
 =====
