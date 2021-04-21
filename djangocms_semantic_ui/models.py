@@ -529,8 +529,8 @@ class Card(CMSPlugin):
         max_length=255,
         help_text=_('Name of an user'),
     )
-    position = models.CharField(
-        verbose_name=_('Position'),
+    company_position = models.CharField(
+        verbose_name=_('Position in the company'),
         max_length=255,
     )
     email = models.EmailField(
