@@ -506,14 +506,10 @@ class CardContainer(CMSPlugin):
         display = []
         if self.label:
             display.append(self.label)
-        if self.tab_container_type:
-            display.append(self.tab_container_type)
         return ' '.join(display)
 
     def get_classes(self):
         classes = []
-        if self.tab_container_type:
-            classes.append(self.tab_container_type)
         return ' '.join(classes)
 
 
