@@ -3,7 +3,7 @@ DjangoCMS Semantic UI
 =====================
 Semantic UI reusable components for DjangoCMS.
 
-This is a fork of [DjangoCMS Semantic UI by CarlosMart626](https://github.com/CarlosMart626/djangocms_semantic_ui)
+This is a fork of `DjangoCMS Semantic UI by CarlosMart626`_
 
 
 Available Components
@@ -26,10 +26,10 @@ project
 
 Settings
 ========
-
 .. code:: python
 
     INSTALLED_APPS = (
         # ...
         'djangocms_semantic_ui',
     )
+.. _DjangoCMS Semantic UI by CarlosMart626 : https://github.com/CarlosMart626/djangocms_semantic_ui
