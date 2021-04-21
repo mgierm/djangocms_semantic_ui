@@ -1,8 +1,8 @@
-{% load static %}
+{% load static easy_thumbnails_tags %}
 
 <div class="{{ instance.get_classes }} card">
     <div class="image">
-        <img src="{{ instance.photo.url }}">
+        <img src="{% thumbnail instance.photo 320x320 %}">
     </div>
     <div class="content">
         <div class="header">{{ instance.header }}</div>
