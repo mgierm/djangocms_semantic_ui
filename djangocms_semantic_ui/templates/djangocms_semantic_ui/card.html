@@ -2,7 +2,7 @@
 
 <div class="{{ instance.get_classes }} card">
     <div class="image">
-        <img src="{% thumbnail instance.photo 320x320 crop %}">
+        <img src="{% if instance.photo %}{% thumbnail instance.photo 320x320 crop %}{% endif %}">
     </div>
     <div class="content">
         <div class="header">{{ instance.header }}</div>
